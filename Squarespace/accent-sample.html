@@ -1,0 +1,72 @@
+<style>
+#smp{--ink:#173B54;--ink2:#5A6B74;--ink3:#8A97A0;--blue:#0B74B2;--teal:#11AEC6;--bg:#fff;--soft:#F1F6F8;--chip:#E2F3F5;--line:#D8E2E5;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:#fff;padding:0 0 70px}
+#smp *{box-sizing:border-box;margin:0;padding:0}
+#smp .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+#smp .top{text-align:center;padding:52px 0 8px}
+#smp .top .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:12px}
+#smp .top h1{font-size:clamp(26px,3.6vw,38px);font-weight:600;letter-spacing:-.03em}
+#smp .top p{color:var(--ink2);font-size:16.5px;max-width:600px;margin:12px auto 0;line-height:1.55}
+#smp .band{padding:40px 0 8px}
+#smp .lab{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+#smp .lab span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--ink3)}
+#smp .lab .pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px}
+#smp .lab .now{background:#EEF1F3;color:#7A8790}
+#smp .lab .new{background:var(--chip);color:var(--blue)}
+#smp .lab hr{flex:1;border:none;border-top:1px solid var(--line)}
+#smp .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+#smp .eye{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+#smp .card h3{font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:7px}
+#smp .card p{color:var(--ink2);font-size:14.5px;line-height:1.55}
+#smp .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+#smp .ico svg{width:23px;height:23px}
+
+/* CURRENT */
+#smp .card-now{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+#smp .card-now .ico{background:var(--chip)}
+#smp .card-now .ico svg{color:var(--blue)}
+
+/* PROPOSED accent */
+#smp .card-new{background:linear-gradient(135deg,var(--chip) 0%,#fff 70%);border:1.5px solid var(--line);border-left:4px solid var(--blue);border-radius:16px;padding:24px}
+#smp .card-new .ico{background:#fff;box-shadow:0 2px 8px rgba(11,116,178,.12)}
+#smp .card-new .ico svg{color:var(--teal)}
+
+/* highlighted callout example */
+#smp .callout{margin-top:22px;background:linear-gradient(135deg,var(--chip),#fff);border:1.5px solid var(--line);border-left:4px solid var(--blue);border-radius:16px;padding:26px 30px}
+#smp .callout .h{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:10px}
+#smp .callout b{color:var(--ink);font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.35;display:block}
+#smp .note{text-align:center;color:var(--ink3);font-size:14.5px;margin-top:42px;line-height:1.6}
+@media(max-width:640px){#smp .grid{grid-template-columns:1fr}}
+</style>
+<div id="smp"><div class="wrap">
+  <div class="top">
+    <div class="k">Sample &middot; Why Shraga cards</div>
+    <h1>Current vs. the accent-card look</h1>
+    <p>Same content and layout, restyled with the callout treatment you liked. Compare, then tell me to apply it site-wide (or not).</p>
+  </div>
+
+  <div class="band">
+    <div class="lab"><span>Current</span><span class="pill now">what's live now</span><hr></div>
+    <div class="grid">
+      <div class="card card-now"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>We lend our own capital</h3><p>No syndication, no shopping your deal around. The people who say yes are the people who fund it.</p></div>
+      <div class="card card-now"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Decisions in 24 hours</h3><p>In-house underwriting means term sheets in a day, not weeks. Projects move on your schedule.</p></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="lab"><span>Proposed</span><span class="pill new">accent-card look</span><hr></div>
+    <div class="grid">
+      <div class="card card-new"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>We lend our own capital</h3><p>No syndication, no shopping your deal around. The people who say yes are the people who fund it.</p></div>
+      <div class="card card-new"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Decisions in 24 hours</h3><p>In-house underwriting means term sheets in a day, not weeks. Projects move on your schedule.</p></div>
+      <div class="card card-new"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2Z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7Z"/></svg></div><h3>Radical transparency</h3><p>Full rate, fees, and terms up front. No teaser rates, no surprises at closing, ever.</p></div>
+      <div class="card card-new"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 3l3 3-3 3M7 14l-3 3 3 3"/></svg></div><h3>Flexible structures</h3><p>Interest-only draws, seasonal payments, bridge-to-perm, built around your cash flow.</p></div>
+    </div>
+
+    <div class="callout">
+      <div class="h">The Shraga difference</div>
+      <b>A direct lender that funds with its own capital, so the answer comes from the same people who write the check.</b>
+    </div>
+  </div>
+
+  <p class="note">If you like it, say the word and I'll roll this treatment through the homepage (Why Shraga cards, solution cards, and one highlighted callout), keeping the logo, hero, and everything else exactly as-is.</p>
+</div></div>

@@ -1,0 +1,161 @@
+<style>
+/* fonts injected at publish */
+:root{--pg:#ffffff;--pgtx:#1d1d1f;--pgmut:#6e6e73}
+*{box-sizing:border-box;margin:0;padding:0}
+#dd{background:#fafafa;color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;-webkit-font-smoothing:antialiased;padding:0 0 80px}
+#dd .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+#dd .top{padding:56px 0 30px;text-align:center}
+#dd .top .kick{font-family:'Inter';font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a8f;font-weight:600;margin-bottom:14px}
+#dd .top h1{font-size:clamp(28px,4vw,42px);font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
+#dd .top p{font-size:17px;color:#6e6e73;max-width:620px;margin:0 auto;line-height:1.55}
+#dd .dir{background:#fff;border:1px solid #ececee;border-radius:22px;overflow:hidden;margin-top:34px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 12px 34px rgba(0,0,0,.05)}
+#dd .dir-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:24px 30px;border-bottom:1px solid #f0f0f2;flex-wrap:wrap}
+#dd .dir-head .n{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a9aa0;font-weight:600;font-family:'Inter'}
+#dd .dir-head h2{font-size:23px;font-weight:600;letter-spacing:-.01em}
+#dd .dir-head .vibe{font-size:14px;color:#86868b;font-family:'Inter'}
+#dd .dir-body{display:grid;grid-template-columns:270px 1fr;gap:0}
+#dd .spec{padding:28px 30px;border-right:1px solid #f0f0f2}
+#dd .spec h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a9aa0;font-weight:600;font-family:'Inter';margin:0 0 12px}
+#dd .spec h4:not(:first-child){margin-top:26px}
+#dd .sw{display:flex;gap:9px;flex-wrap:wrap}
+#dd .sw div{width:38px;height:38px;border-radius:9px;border:1px solid rgba(0,0,0,.08)}
+#dd .fnt{font-size:14px;color:#4a4a4f;font-family:'Inter';line-height:1.7}
+#dd .fnt b{color:#1d1d1f;font-weight:600}
+#dd .demo{padding:0}
+/* ---- generic demo skeleton ---- */
+#dd .d{padding:30px 34px}
+#dd .d .nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:26px;margin-bottom:30px;border-bottom:1px solid var(--line)}
+#dd .d .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:17px;letter-spacing:-.01em;color:var(--ink)}
+#dd .d .brand .mk{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#c9d3e0,#8794a6);display:flex;align-items:center;justify-content:center;color:#0b2e6b;font-weight:800;font-size:15px;font-family:-apple-system,sans-serif}
+#dd .d .navlinks{display:flex;gap:20px;font-size:14px;color:var(--mut);font-family:'Inter'}
+#dd .d .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;font-family:'Inter';margin-bottom:16px}
+#dd .d h3{font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px;font-family:var(--disp);font-weight:var(--dispw)}
+#dd .d h3 em{font-style:normal;color:var(--accent)}
+#dd .d .sub{font-size:16px;line-height:1.6;color:var(--mut);font-family:'Inter';max-width:520px;margin-bottom:24px}
+#dd .d .btns{display:flex;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+#dd .d .b1{background:var(--accent);color:var(--accenttx,#fff);border:none;font-family:'Inter';font-weight:600;font-size:15px;padding:12px 22px;border-radius:var(--rad);cursor:pointer}
+#dd .d .b2{background:transparent;color:var(--ink);border:1px solid var(--line);font-family:'Inter';font-weight:600;font-size:15px;padding:12px 22px;border-radius:var(--rad);cursor:pointer}
+#dd .d .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#dd .d .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radc);padding:20px}
+#dd .d .card .ci{width:38px;height:38px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--accent);font-size:19px}
+#dd .d .card h5{font-family:var(--disp);font-weight:var(--dispw);font-size:17px;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+#dd .d .card p{font-family:'Inter';font-size:13.5px;color:var(--mut);line-height:1.5;margin-bottom:12px}
+#dd .d .card .row{display:flex;justify-content:space-between;font-family:'Inter';font-size:13px;border-top:1px solid var(--line);padding-top:10px}
+#dd .d .card .row span:first-child{color:var(--mut)}
+#dd .d .card .row span:last-child{color:var(--ink);font-weight:600}
+
+/* ============ DIRECTION 1: CUPERTINO ============ */
+#dd .cupertino{--bg:#fff;--surface:#f5f5f7;--line:#e3e3e6;--ink:#1d1d1f;--mut:#6e6e73;--accent:#0071e3;--chip:#eaf3ff;--disp:-apple-system,'Inter',sans-serif;--dispw:600;--rad:980px;--radc:16px}
+#dd .cupertino .d{background:#fff}
+/* ============ DIRECTION 2: EDITORIAL (Notion) ============ */
+#dd .editorial{--bg:#fff;--surface:#faf9f6;--line:#eceae3;--ink:#37352f;--mut:#7c766b;--accent:#2f6bd0;--chip:#eef3fb;--disp:'Newsreader',Georgia,serif;--dispw:500;--rad:8px;--radc:14px}
+#dd .editorial .d{background:#fffdf9}
+#dd .editorial .d h3{letter-spacing:-.01em}
+#dd .editorial .d .brand .mk{border-radius:8px}
+/* ============ DIRECTION 3: STEEL MINIMAL ============ */
+#dd .steel{--bg:#fff;--surface:#f6f8fb;--line:#e4e7ec;--ink:#101828;--mut:#667085;--accent:#0b2e6b;--chip:#e9eff9;--disp:'Manrope','Inter',sans-serif;--dispw:700;--rad:10px;--radc:14px}
+#dd .steel .d{background:#fff}
+#dd .steel .d .b1{--accenttx:#fff}
+
+#dd .note{margin-top:40px;text-align:center;font-family:'Inter';font-size:15px;color:#86868b;line-height:1.6}
+@media(max-width:720px){#dd .dir-body{grid-template-columns:1fr}#dd .spec{border-right:none;border-bottom:1px solid #f0f0f2}#dd .d .cards{grid-template-columns:1fr}#dd .d .navlinks{display:none}}
+</style>
+
+<div id="dd">
+  <div class="wrap">
+    <div class="top">
+      <div class="kick">Shraga Funding &middot; Design Directions</div>
+      <h1>Three ways to take the look cleaner</h1>
+      <p>Same logo, banner, and navy brand, restyled toward a calmer, more premium Apple / Notion feel. Compare the color and typography, then tell me which one (or mix) to apply site-wide.</p>
+    </div>
+
+    <!-- DIR 1 -->
+    <div class="dir cupertino">
+      <div class="dir-head">
+        <div><div class="n">Option A</div><h2>Cupertino</h2></div>
+        <div class="vibe">Airy &middot; minimal &middot; product-grade</div>
+      </div>
+      <div class="dir-body">
+        <div class="spec">
+          <h4>Palette</h4>
+          <div class="sw"><div style="background:#ffffff"></div><div style="background:#f5f5f7"></div><div style="background:#1d1d1f"></div><div style="background:#6e6e73"></div><div style="background:#0071e3"></div></div>
+          <h4>Type</h4>
+          <p class="fnt"><b>SF Pro</b> (Apple system font)<br>headings, semibold, tight<br><b>Inter</b> for body &amp; UI</p>
+          <h4>Feel</h4>
+          <p class="fnt">Cool greys, lots of white, one confident blue. Pill buttons, generous spacing.</p>
+        </div>
+        <div class="demo"><div class="d">
+          <div class="nav"><div class="brand"><span class="mk">S</span> Shraga Funding</div><div class="navlinks"><span>Solutions</span><span>How it works</span><span>FAQ</span></div></div>
+          <div class="eyebrow">Direct Lender</div>
+          <h3>Capital that's <em>ready to break ground</em></h3>
+          <div class="sub">A direct lender for builders and developers. We fund with our own capital and decide fast.</div>
+          <div class="btns"><button class="b1">Get funded</button><button class="b2">See how it works</button></div>
+          <div class="cards">
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg></div><h5>Construction Loans</h5><p>Ground-up financing with interest-only draws.</p><div class="row"><span>Amount</span><span>$250K&ndash;$10M</span></div></div>
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9h6v12M3 9h18"/></svg></div><h5>Commercial Real Estate</h5><p>Purchase, refinance, and cash-out.</p><div class="row"><span>Term</span><span>Up to 25 yr</span></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- DIR 2 -->
+    <div class="dir editorial">
+      <div class="dir-head">
+        <div><div class="n">Option B</div><h2>Editorial</h2></div>
+        <div class="vibe">Warm &middot; calm &middot; Notion-like</div>
+      </div>
+      <div class="dir-body">
+        <div class="spec">
+          <h4>Palette</h4>
+          <div class="sw"><div style="background:#ffffff"></div><div style="background:#faf9f6"></div><div style="background:#37352f"></div><div style="background:#7c766b"></div><div style="background:#2f6bd0"></div></div>
+          <h4>Type</h4>
+          <p class="fnt"><b>Newsreader</b> for headings<br>editorial, a touch of character<br><b>Inter</b> for body &amp; UI</p>
+          <h4>Feel</h4>
+          <p class="fnt">Warm off-whites, soft ink (not pure black), serif headlines. Human and trustworthy.</p>
+        </div>
+        <div class="demo"><div class="d">
+          <div class="nav"><div class="brand"><span class="mk">S</span> Shraga Funding</div><div class="navlinks"><span>Solutions</span><span>How it works</span><span>FAQ</span></div></div>
+          <div class="eyebrow">Direct Lender</div>
+          <h3>Capital that's <em>ready to break ground</em></h3>
+          <div class="sub">A direct lender for builders and developers. We fund with our own capital and decide fast.</div>
+          <div class="btns"><button class="b1">Get funded</button><button class="b2">See how it works</button></div>
+          <div class="cards">
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg></div><h5>Construction Loans</h5><p>Ground-up financing with interest-only draws.</p><div class="row"><span>Amount</span><span>$250K&ndash;$10M</span></div></div>
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9h6v12M3 9h18"/></svg></div><h5>Commercial Real Estate</h5><p>Purchase, refinance, and cash-out.</p><div class="row"><span>Term</span><span>Up to 25 yr</span></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- DIR 3 -->
+    <div class="dir steel">
+      <div class="dir-head">
+        <div><div class="n">Option C</div><h2>Steel Minimal</h2></div>
+        <div class="vibe">Crisp &middot; premium &middot; on-brand navy</div>
+      </div>
+      <div class="dir-body">
+        <div class="spec">
+          <h4>Palette</h4>
+          <div class="sw"><div style="background:#ffffff"></div><div style="background:#f6f8fb"></div><div style="background:#101828"></div><div style="background:#667085"></div><div style="background:#0b2e6b"></div></div>
+          <h4>Type</h4>
+          <p class="fnt"><b>Manrope</b> for headings<br>modern, clean, confident<br><b>Inter</b> for body &amp; UI</p>
+          <h4>Feel</h4>
+          <p class="fnt">Cool neutral greys with your brand navy as the accent. Corporate-premium, closest to today.</p>
+        </div>
+        <div class="demo"><div class="d">
+          <div class="nav"><div class="brand"><span class="mk">S</span> Shraga Funding</div><div class="navlinks"><span>Solutions</span><span>How it works</span><span>FAQ</span></div></div>
+          <div class="eyebrow">Direct Lender</div>
+          <h3>Capital that's <em>ready to break ground</em></h3>
+          <div class="sub">A direct lender for builders and developers. We fund with our own capital and decide fast.</div>
+          <div class="btns"><button class="b1">Get funded</button><button class="b2">See how it works</button></div>
+          <div class="cards">
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg></div><h5>Construction Loans</h5><p>Ground-up financing with interest-only draws.</p><div class="row"><span>Amount</span><span>$250K&ndash;$10M</span></div></div>
+            <div class="card"><div class="ci"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9h6v12M3 9h18"/></svg></div><h5>Commercial Real Estate</h5><p>Purchase, refinance, and cash-out.</p><div class="row"><span>Term</span><span>Up to 25 yr</span></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <p class="note">Your logo, hero banner, and navy stay exactly as they are.<br>Tell me a letter, A, B, or C, or mix and match (e.g. "B's warmth with C's navy"), and I'll apply it across the whole site.</p>
+  </div>
+</div>
