@@ -53,9 +53,11 @@ html,body{background:#FFFFFF!important}
 #shraga .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line-2);transition:box-shadow .25s ease,background .25s ease}
 #shraga .nav.scrolled{box-shadow:0 6px 24px rgba(11,46,107,.09);background:rgba(255,255,255,.94)}
 #shraga .nav-inner{display:flex;align-items:center;justify-content:space-between;height:84px}
-#shraga .brand{display:inline-flex;align-items:center}
-#shraga .brand img{height:54px;width:auto;display:block;transition:transform .2s ease}
-#shraga .brand:hover img{transform:scale(1.03)}
+#shraga .brand{display:inline-flex;align-items:center;gap:13px}
+#shraga .brand .brand-s{height:46px;width:auto;display:block;transition:transform .2s ease}
+#shraga .brand .brand-wm{display:inline-flex;align-items:center}
+#shraga .brand .brand-wm svg{height:23px;width:auto;display:block}
+#shraga .brand:hover .brand-s{transform:scale(1.03)}
 #shraga .nav-links{display:flex;align-items:center;gap:32px}
 #shraga .nav-links a{position:relative;font-size:14.5px;font-weight:500;color:var(--ink-2);transition:color .15s}
 #shraga .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
@@ -249,7 +251,8 @@ html,body{background:#FFFFFF!important}
 @media(max-width:760px){
   #shraga .nav-links,#shraga .nav-phone{display:none}
   #shraga .burger{display:block}
-  #shraga .brand img{height:40px}
+  #shraga .brand .brand-s{height:36px}
+  #shraga .brand .brand-wm svg{height:18px}
   #shraga .nav-inner{height:68px}
   #shraga section{padding:64px 0}
   #shraga .hero{padding:20px 0 48px}
@@ -324,7 +327,7 @@ html,body{background:#FFFFFF!important}
 <!-- ============ NAV ============ -->
 <div class="nav" id="shragaNav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand" aria-label="Shraga Funding home"><img src="__LOGO_NAV__" alt="Shraga Funding"></a>
+    <a href="#top" class="brand" aria-label="Shraga Funding home"><img class="brand-s" src="__LOGOS__" alt="Shraga Funding"><span class="brand-wm">__WORDMARK__</span></a>
     <nav class="nav-links">
       <a href="#solutions">Solutions</a>
       <a href="#how">How It Works</a>
@@ -555,7 +558,7 @@ html,body{background:#FFFFFF!important}
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <div class="brand"><img src="__LOGO_NAV__" alt="Shraga Funding"></div>
+        <div class="brand"><img class="brand-s" src="__LOGOS__" alt="Shraga Funding"><span class="brand-wm">__WORDMARK__</span></div>
         <p class="footer-about">A direct lender providing construction, commercial real estate, and business financing, underwritten in-house and funded with our own capital.</p>
         <div class="footer-contact">
           <a href="tel:+18186063481"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> (818) 606-3481</a>
