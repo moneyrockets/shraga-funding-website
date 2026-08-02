@@ -52,16 +52,22 @@ html,body{background:#FFFFFF!important}
 /* ===================== NAV ===================== */
 #shraga .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line-2);transition:box-shadow .25s ease,background .25s ease}
 #shraga .nav.scrolled{box-shadow:0 6px 24px rgba(11,46,107,.09);background:rgba(255,255,255,.94)}
-#shraga .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+#shraga .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px;max-width:none;padding:0 40px}
 #shraga .nav-inner .brand{justify-self:start}
-#shraga .nav-center{justify-self:center;display:flex;align-items:center;gap:30px}
+#shraga .nav-center{justify-self:center;display:flex;align-items:center;gap:22px}
 #shraga .nav-right{justify-self:end;display:flex;align-items:center;gap:14px}
+/* collapse nav to menu before the centered links can crowd the logo */
+@media(max-width:1240px){
+  #shraga .nav-center{display:none}
+  #shraga .burger{display:block}
+  #shraga .nav-inner{display:flex;justify-content:space-between;padding:0 28px}
+}
 #shraga .brand{display:inline-flex;align-items:center;gap:13px}
-#shraga .brand .brand-s{height:46px;width:auto;display:block;transition:transform .2s ease}
+#shraga .brand .brand-s{height:38px;width:auto;display:block;transition:transform .2s ease}
 #shraga .brand .brand-wm{display:inline-flex;align-items:center}
-#shraga .brand .brand-wm svg{height:23px;width:auto;display:block}
+#shraga .brand .brand-wm svg{height:18px;width:auto;display:block}
 #shraga .brand:hover .brand-s{transform:scale(1.03)}
-#shraga .nav-links{display:flex;align-items:center;gap:32px}
+#shraga .nav-links{display:flex;align-items:center;gap:22px}
 #shraga .nav-links a{position:relative;font-size:14.5px;font-weight:500;color:var(--ink-2);transition:color .15s}
 #shraga .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 #shraga .nav-links a:hover{color:var(--blue)}
