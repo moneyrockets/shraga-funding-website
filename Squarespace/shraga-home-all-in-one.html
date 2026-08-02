@@ -76,7 +76,7 @@ html,body{background:#FFFFFF!important}
 #shraga .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#C5DBEF 0%,#E8F1FA 62%,var(--bg) 100%);padding:0 0 56px}
 #shraga .grid-anim{position:absolute;inset:-40px;background-image:linear-gradient(rgba(22,87,196,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(22,87,196,.10) 1px,transparent 1px);background-size:38px 38px;-webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 10%,transparent 78%);mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 10%,transparent 78%);animation:gridDrift 22s linear infinite}
 @keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:38px 38px,38px 38px}}
-#shraga .hero-banner{position:relative;width:100%;max-width:1600px;margin:0 auto;overflow:hidden;line-height:0;box-shadow:0 24px 48px rgba(11,46,107,.12)}
+#shraga .hero-banner{position:relative;width:100%;max-width:none;margin:0 auto;overflow:hidden;line-height:0;box-shadow:0 20px 40px rgba(11,46,107,.10)}
 #shraga .hero-banner img{width:100%;height:auto;display:block}
 /* metallic shimmer sweep */
 #shraga .hero-banner .shimmer{position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-16deg);pointer-events:none;animation:shimmer 7s ease-in-out 1.4s infinite}
@@ -216,8 +216,9 @@ html,body{background:#FFFFFF!important}
 /* ===================== FOOTER ===================== */
 #shraga .footer{background:#0A1526;color:#B8C4D6;padding:64px 0 28px}
 #shraga .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.09)}
-#shraga .footer .brand{margin-bottom:18px}
-#shraga .footer .brand img{height:56px}
+#shraga .footer .brand{margin-bottom:18px;gap:10px}
+#shraga .footer .brand .brand-s{height:38px}
+#shraga .footer .brand .brand-wm svg{height:17px}
 #shraga .footer-about{font-size:14px;line-height:1.6;color:#8FA0B8;margin-bottom:20px;max-width:320px}
 #shraga .footer-contact{display:flex;flex-direction:column;gap:10px;font-size:14px}
 #shraga .footer-contact a{display:flex;align-items:center;gap:9px;color:#B8C4D6;transition:color .15s}
