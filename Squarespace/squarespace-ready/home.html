@@ -337,6 +337,13 @@ html,body{background:#FFFFFF!important}
 
 
 #shraga .step p .hl{color:var(--blue);font-weight:600}
+
+/* open FAQ gets the accent-card treatment used on .step / TOC callouts.
+   left bar is an inset shadow, not a border, so opening causes zero layout shift */
+#shraga .faq{transition:box-shadow .2s,border-color .2s,background .25s ease}
+#shraga .faq[open]{background:linear-gradient(135deg,var(--bg-blueprint) 0%,#fff 72%);border-color:var(--line);box-shadow:inset 4px 0 0 var(--blue),var(--shadow)}
+#shraga .faq[open] summary{color:var(--ink);font-weight:600}
+
 /* ============ PHONE POLISH (does not affect desktop) ============ */
 @media(max-width:560px){
   /* Header: flexible wordmark that can never collide with Apply Now */
