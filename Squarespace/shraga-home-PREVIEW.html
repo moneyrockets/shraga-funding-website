@@ -47,6 +47,12 @@
 #shraga .faq[open]{background:linear-gradient(135deg,var(--bg-blueprint) 0%,#fff 72%);border-color:var(--line);box-shadow:inset 4px 0 0 var(--blue),var(--shadow)}
 #shraga .faq[open] summary{color:var(--ink);font-weight:600}
 
+
+/* footer links hover to the Apply Now turquoise (--blue-bright).
+   !important is required: the light-theme override sets these colors with !important */
+#shraga .footer ul a,#shraga .footer-contact a,#shraga .footer-legal a{transition:color .15s ease}
+#shraga .footer ul a:hover,#shraga .footer-contact a:hover,#shraga .footer-legal a:hover{color:var(--blue-bright)!important}
+
 </style>
 <style>
 /* kills dark-theme bleed */
@@ -608,9 +614,10 @@ html,body{background:#FFFFFF!important}
         <ul>
           <li><a href="#solutions">Commercial Real Estate</a></li>
           <li><a href="#solutions">Bridge Financing</a></li>
-          <li><a href="#solutions">Term Loans</a></li>
           <li><a href="#solutions">Lines of Credit</a></li>
+          <li><a href="#solutions">SBA-Style Loans</a></li>
           <li><a href="#solutions">Working Capital</a></li>
+          <li><a href="#solutions">Revenue Advance</a></li>
         </ul>
       </div>
       <div>
