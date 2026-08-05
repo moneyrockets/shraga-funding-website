@@ -334,6 +334,35 @@ html,body{background:#FFFFFF!important}
 #shraga .diff blockquote,#shraga .cta h2,#shraga .footer h4{color:var(--ink)!important}
 #shraga .footer-about,#shraga .footer ul a,#shraga .footer-contact a,#shraga .cta p,#shraga .cta .checklist li{color:var(--ink-2)!important}
 #shraga .grid-anim{display:none!important}
+
+/* ============ PHONE POLISH (does not affect desktop) ============ */
+@media(max-width:560px){
+  /* Header: flexible wordmark that can never collide with Apply Now */
+  #shraga .nav-inner{height:62px;padding:0 16px;gap:12px}
+  #shraga .brand{flex:1;min-width:0;gap:8px}
+  #shraga .brand .brand-s{height:30px;flex-shrink:0}
+  #shraga .brand .brand-wm{flex:1;min-width:0;display:block}
+  #shraga .brand .brand-wm svg{width:100%;height:auto;max-height:14px}
+  #shraga .nav-right{gap:6px;flex-shrink:0}
+  #shraga .nav-right .btn{font-size:13px;padding:9px 15px}
+  #shraga .burger{padding:5px}
+  #shraga .burger svg{width:24px;height:24px}
+  /* Hero: taller, more immersive image crop */
+  #shraga .hero-banner img{height:58vw;object-fit:cover;object-position:center}
+  #shraga .hero-inner{padding-top:34px}
+  #shraga .hero-h1{font-size:31px}
+  #shraga .hero-sub{font-size:16.5px;line-height:1.62;margin-bottom:24px;padding:0 4px}
+  /* Full-width stacked CTAs, app-style */
+  #shraga .hero-ctas{flex-direction:column;align-items:stretch;gap:11px;max-width:320px;margin:0 auto 24px}
+  #shraga .hero-ctas .btn{justify-content:center;padding:15px 26px;font-size:16px}
+  #shraga .hero-trust{gap:12px 20px;font-size:12.5px;padding:0 8px}
+  /* Tighter rhythm + type scale */
+  #shraga section{padding:52px 0}
+  #shraga .sec-head h2{font-size:27px}
+  #shraga .wrap{padding:0 20px}
+  #shraga .footer .brand .brand-s{height:30px}
+  #shraga .footer .brand .brand-wm svg{height:13px}
+}
 </style>
 
 <!-- ============ NAV ============ -->
