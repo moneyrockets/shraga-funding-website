@@ -1,0 +1,678 @@
+<!-- ============================================================
+     SHRAGA FUNDING — Homepage (all-in-one code block)
+     Paste into: Home page > Blank Section > Code Block (Display Source OFF)
+     Theme: Light & clean · Blueprint blue + steel · Direct lender
+     Real logo + hero embedded · Animated · Placeholders [[ ]] to fill.
+     ============================================================ -->
+<div id="shraga">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* kills dark-theme bleed */
+html,body{background:#FFFFFF!important}
+#shraga{background:#FFFFFF!important}
+#shraga section,#shraga .hero,#shraga .stats{background-color:#FFFFFF}
+
+/* ===================== TOKENS ===================== */
+#shraga{
+  --ink:#173B54; --ink-2:#5A6B74; --ink-3:#8A97A0;
+  --blue:#0B74B2; --blue-deep:#0C3A5A; --blue-bright:#11AEC6;
+  --steel:#7C8AA0; --steel-lt:#AEB9C8;
+  --bg:#FFFFFF; --bg-soft:#F1F6F8; --bg-blueprint:#E2F3F5; --paper:#F5F7F8;
+  --line:#D8E2E5; --line-2:#E9EFF1;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,0,0,.05);
+  --shadow-lg:0 22px 55px rgba(0,0,0,.10);
+  --radius:18px; --radius-sm:12px; --maxw:1120px;
+  --ff-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",sans-serif;
+  --ff-body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",sans-serif;
+  --ff-mono:-apple-system,"Inter",sans-serif;
+  font-family:var(--ff-body); color:var(--ink); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+#shraga *{box-sizing:border-box;margin:0;padding:0}
+#shraga a{color:inherit;text-decoration:none}
+#shraga img{max-width:100%;display:block}
+#shraga .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+#shraga .eyebrow{font-family:var(--ff-body);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-bright);font-weight:600}
+#shraga h1,#shraga h2,#shraga h3,#shraga h4{font-family:var(--ff-display);line-height:1.08;letter-spacing:-.022em;color:var(--ink);font-weight:600}
+#shraga p{color:var(--ink-2)}
+
+/* ===================== BUTTONS ===================== */
+#shraga .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-weight:600;font-size:15px;padding:13px 26px;border-radius:980px;cursor:pointer;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;white-space:nowrap}
+#shraga .btn-primary{background:linear-gradient(135deg,#0E8ABE 0%,#12A6BC 100%);color:#fff;box-shadow:0 6px 18px rgba(16,150,180,.28)}
+#shraga .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05);box-shadow:0 10px 26px rgba(16,150,180,.34)}
+#shraga .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+#shraga .btn-ghost:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+#shraga .btn-lg{padding:17px 34px;font-size:16px}
+/* button sheen */
+#shraga .btn::after{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .6s ease}
+#shraga .btn:hover::after{left:130%}
+
+/* ===================== NAV ===================== */
+#shraga .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line-2);transition:box-shadow .25s ease,background .25s ease}
+#shraga .nav.scrolled{box-shadow:0 6px 24px rgba(11,46,107,.09);background:rgba(255,255,255,.94)}
+#shraga .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px;max-width:none;padding:0 40px}
+#shraga .nav-inner .brand{justify-self:start}
+#shraga .nav-center{justify-self:center;display:flex;align-items:center;gap:36px}
+#shraga .nav-right{justify-self:end;display:flex;align-items:center;gap:14px}
+/* collapse nav to menu before the centered links can crowd the logo */
+@media(max-width:1320px){
+  #shraga .nav-center{display:none}
+  #shraga .burger{display:block}
+  #shraga .nav-inner{display:flex;justify-content:space-between;padding:0 28px}
+}
+#shraga .brand{display:inline-flex;align-items:center;gap:13px}
+#shraga .brand .brand-s{height:38px;width:auto;display:block;transition:transform .2s ease}
+#shraga .brand .brand-wm{display:inline-flex;align-items:center}
+#shraga .brand .brand-wm svg{height:18px;width:auto;display:block}
+#shraga .brand:hover .brand-s{transform:scale(1.03)}
+#shraga .nav-links{display:flex;align-items:center;gap:34px}
+#shraga .nav-links a{position:relative;font-size:16px;font-weight:500;color:var(--ink-2);transition:color .15s}
+#shraga .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+#shraga .nav-links a:hover{color:var(--blue)}
+#shraga .nav-links a:hover::after{transform:scaleX(1)}
+#shraga .nav-cta{display:flex;align-items:center;gap:16px}
+#shraga .nav-phone{font-size:19px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+#shraga .nav-phone svg{width:19px;height:19px;color:var(--blue)}
+#shraga .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+#shraga .burger svg{width:26px;height:26px;color:var(--ink)}
+#shraga .mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px 24px 24px;border-bottom:1px solid var(--line-2);background:#fff}
+#shraga .mobile-menu a{padding:13px 4px;font-size:16px;font-weight:500;border-bottom:1px solid var(--line-2)}
+#shraga .mobile-menu .btn{margin-top:14px;justify-content:center}
+
+/* ===================== HERO ===================== */
+#shraga .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#C5DBEF 0%,#E8F1FA 62%,var(--bg) 100%);padding:0 0 56px}
+#shraga .grid-anim{position:absolute;inset:-40px;background-image:linear-gradient(rgba(22,87,196,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(22,87,196,.10) 1px,transparent 1px);background-size:38px 38px;-webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 10%,transparent 78%);mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 10%,transparent 78%);animation:gridDrift 22s linear infinite}
+@keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:38px 38px,38px 38px}}
+#shraga .hero-banner{position:relative;width:100%;max-width:none;margin:0 auto;overflow:hidden;line-height:0;box-shadow:0 20px 40px rgba(11,46,107,.10)}
+#shraga .hero-banner img{width:100%;height:auto;display:block}
+/* metallic shimmer sweep */
+#shraga .hero-banner .shimmer{position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-16deg);pointer-events:none;animation:shimmer 7s ease-in-out 1.4s infinite}
+@keyframes shimmer{0%{left:-60%}20%{left:135%}100%{left:135%}}
+#shraga .hero-inner{position:relative;text-align:center;padding-top:44px}
+#shraga .hero-h1{font-size:clamp(32px,4.6vw,52px);font-weight:600;margin:0 auto 16px;max-width:900px;letter-spacing:-.03em}
+#shraga .hero-h1 .accent{color:var(--blue)}
+#shraga .hero-sub{font-size:19px;line-height:1.55;max-width:620px;margin:0 auto 30px}
+#shraga .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+#shraga .hero-trust{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-3);font-weight:500}
+#shraga .hero-trust span{display:flex;align-items:center;gap:7px}
+#shraga .hero-trust svg{width:16px;height:16px;color:var(--blue)}
+
+/* ===================== STATS ===================== */
+#shraga .stats{border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);background:#fff}
+#shraga .stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+#shraga .stat{padding:38px 24px;text-align:center;border-right:1px solid var(--line-2)}
+#shraga .stat:last-child{border-right:none}
+#shraga .stat b{display:block;font-family:var(--ff-display);font-size:clamp(32px,3.6vw,44px);font-weight:600;color:var(--blue);letter-spacing:-.03em}
+#shraga .stat span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:6px;font-weight:500}
+
+/* ===================== SECTION SHELL ===================== */
+#shraga section{padding:118px 0}
+#shraga .sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
+#shraga .sec-head .eyebrow{margin-bottom:16px;display:inline-block}
+#shraga .sec-head h2{font-size:clamp(30px,4vw,46px);font-weight:600;margin-bottom:16px;letter-spacing:-.03em}
+#shraga .sec-head h2 .u{position:relative;white-space:nowrap}
+#shraga .sec-head h2 .u::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--blue);opacity:.9;transform:scaleX(0);transform-origin:left;transition:transform .7s ease .2s}
+#shraga .sec-head.in h2 .u::after{transform:scaleX(1)}
+#shraga .sec-head p{font-size:18px}
+
+/* ===================== DIFFERENCE ===================== */
+#shraga .diff{background:var(--blue-deep);color:#fff;position:relative;overflow:hidden}
+#shraga .diff .grid-anim{background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);-webkit-mask-image:radial-gradient(ellipse 70% 90% at 30% 50%,#000,transparent 72%);mask-image:radial-gradient(ellipse 70% 90% at 30% 50%,#000,transparent 72%)}
+#shraga .diff-inner{position:relative;max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
+#shraga .diff .diff-mark{width:clamp(120px,15vw,168px);height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));animation:floaty 5s ease-in-out infinite}
+#shraga .diff-eyebrow{display:flex;justify-content:center;width:100%}
+#shraga .diff-eyebrow svg{height:15px;width:auto;display:block}
+#shraga .diff .eyebrow{color:var(--steel-lt)}
+#shraga .diff blockquote{font-family:var(--ff-display);font-size:clamp(24px,3.4vw,36px);line-height:1.28;font-weight:500;color:#fff;letter-spacing:-.02em}
+#shraga .diff blockquote em{color:var(--blue-bright);font-style:normal}
+#shraga .diff cite{font-style:normal;font-size:15px;color:var(--steel-lt);font-weight:500}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ===================== SOLUTIONS ===================== */
+#shraga .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+#shraga .sol{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;overflow:hidden}
+#shraga .sol:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+#shraga .sol-ico{width:48px;height:48px;border-radius:12px;background:var(--bg-blueprint);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .2s}
+#shraga .sol-ico svg{width:24px;height:24px;color:var(--blue);transition:transform .3s ease}
+#shraga .sol:hover .sol-ico svg{transform:scale(1.12) rotate(-4deg)}
+#shraga .sol h3{font-size:19px;font-weight:600;margin-bottom:8px}
+#shraga .sol p{font-size:14.5px;line-height:1.55;margin-bottom:16px}
+#shraga .sol .terms{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line-2);padding-top:14px}
+#shraga .sol .terms div{display:flex;justify-content:space-between;font-size:13px}
+#shraga .sol .terms .k{color:var(--ink-3)}
+#shraga .sol .terms .v{font-weight:600;color:var(--ink);font-family:var(--ff-display)}
+#shraga .sol.feat{background:linear-gradient(160deg,#0B2E6B,#12408F);border-color:transparent}
+#shraga .sol.feat h3,#shraga .sol.feat p{color:#fff}
+#shraga .sol.feat p{color:#C7D6EF}
+#shraga .sol.feat .sol-ico{background:rgba(255,255,255,.12)}
+#shraga .sol.feat .sol-ico svg{color:#fff}
+#shraga .sol.feat .terms{border-top-color:rgba(255,255,255,.16)}
+#shraga .sol.feat .terms .k{color:#9FB6DC}
+#shraga .sol.feat .terms .v{color:#fff}
+#shraga .sol.feat .tagpill{position:absolute;top:20px;right:20px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.16);color:#fff;padding:5px 10px;border-radius:100px}
+
+/* ===================== HOW ===================== */
+#shraga .how{background:var(--bg-soft)}
+#shraga .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+#shraga .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;position:relative;transition:transform .2s,box-shadow .2s}
+#shraga .step:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+#shraga .step-num{font-family:var(--ff-mono);font-size:13px;color:var(--blue);font-weight:500;letter-spacing:.1em}
+#shraga .step-ico{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;margin:16px 0 18px}
+#shraga .step-ico svg{width:26px;height:26px;color:#fff}
+#shraga .step h3{font-size:20px;font-weight:600;margin-bottom:10px}
+#shraga .step p{font-size:15px;line-height:1.55}
+
+/* ===================== WHY ===================== */
+#shraga .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+#shraga .why{display:flex;gap:18px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:box-shadow .2s,transform .2s}
+#shraga .why:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+#shraga .why-ico{flex:0 0 auto;width:48px;height:48px;border-radius:12px;background:var(--bg-blueprint);display:flex;align-items:center;justify-content:center}
+#shraga .why-ico svg{width:24px;height:24px;color:var(--blue)}
+#shraga .why h3{font-size:18px;font-weight:600;margin-bottom:7px}
+#shraga .why p{font-size:14.5px;line-height:1.55}
+
+/* ===================== RESULT ===================== */
+#shraga .result{background:var(--bg-blueprint);border:1px solid var(--line);border-radius:24px;padding:52px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;max-width:var(--maxw)}
+#shraga .result blockquote{font-family:var(--ff-display);font-size:clamp(22px,2.6vw,30px);line-height:1.32;font-weight:500;letter-spacing:-.02em;color:var(--ink);margin-bottom:24px}
+#shraga .result .who{display:flex;align-items:center;gap:14px}
+#shraga .result .avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--ff-display);font-weight:700;font-size:18px}
+#shraga .result .who b{display:block;font-size:15px;color:var(--ink)}
+#shraga .result .who span{font-size:13.5px;color:var(--ink-3)}
+#shraga .result-stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center}
+#shraga .result-stat b{display:block;font-family:var(--ff-display);font-size:42px;font-weight:700;color:var(--blue-deep);letter-spacing:-.02em}
+#shraga .result-stat span{font-size:14px;color:var(--ink-3);display:block;margin-top:6px}
+#shraga .result-stat + .result-stat{margin-top:16px}
+
+/* ===================== FAQ ===================== */
+#shraga .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+#shraga .faq{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+#shraga .faq[open]{box-shadow:var(--shadow);border-color:var(--blue)}
+#shraga .faq summary{list-style:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--ff-display);font-size:17px;font-weight:500;color:var(--ink)}
+#shraga .faq summary::-webkit-details-marker{display:none}
+#shraga .faq summary .plus{flex:0 0 auto;width:24px;height:24px;position:relative;transition:transform .3s}
+#shraga .faq[open] summary .plus{transform:rotate(180deg)}
+#shraga .faq summary .plus::before,#shraga .faq summary .plus::after{content:"";position:absolute;background:var(--blue);border-radius:2px}
+#shraga .faq summary .plus::before{top:11px;left:4px;right:4px;height:2px}
+#shraga .faq summary .plus::after{left:11px;top:4px;bottom:4px;width:2px;transition:opacity .2s}
+#shraga .faq[open] summary .plus::after{opacity:0}
+#shraga .faq-body{padding:0 24px 22px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+
+/* ===================== CTA / CONTACT ===================== */
+#shraga .cta{background:linear-gradient(160deg,#0B2E6B 0%,#123F8C 100%);color:#fff;position:relative;overflow:hidden}
+#shraga .cta .grid-anim{background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);-webkit-mask-image:radial-gradient(ellipse 70% 90% at 80% 15%,#000,transparent 72%);mask-image:radial-gradient(ellipse 70% 90% at 80% 15%,#000,transparent 72%)}
+#shraga .cta-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+#shraga .cta h2{color:#fff;font-size:clamp(30px,4vw,42px);font-weight:700;margin-bottom:16px}
+#shraga .cta p{color:#C7D6EF;font-size:18px;margin-bottom:26px}
+#shraga .cta .checklist{list-style:none;display:flex;flex-direction:column;gap:12px}
+#shraga .cta .checklist li{display:flex;align-items:center;gap:11px;color:#DCE7F8;font-size:15.5px}
+#shraga .cta .checklist svg{width:20px;height:20px;color:var(--blue-bright);flex:0 0 auto}
+#shraga .form{background:#fff;border-radius:20px;padding:32px;box-shadow:var(--shadow-lg)}
+#shraga .form h3{font-size:22px;font-weight:600;margin-bottom:6px}
+#shraga .form .sub{font-size:14px;color:var(--ink-3);margin-bottom:22px}
+#shraga .form label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+#shraga .field{margin-bottom:16px}
+#shraga .field input,#shraga .field select,#shraga .field textarea{width:100%;font-family:var(--ff-body);font-size:15px;color:var(--ink);padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:border-color .15s,box-shadow .15s}
+#shraga .field input:focus,#shraga .field select:focus,#shraga .field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(22,87,196,.12)}
+#shraga .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#shraga .form .btn{width:100%;justify-content:center;margin-top:6px}
+#shraga .form .fineprint{font-size:11.5px;color:var(--ink-3);margin-top:14px;text-align:center;line-height:1.5}
+#shraga .hp{position:absolute;left:-9999px}
+#shraga .form-success{display:none;text-align:center;padding:40px 20px}
+#shraga .form-success svg{width:56px;height:56px;color:#18B26B;margin:0 auto 16px}
+#shraga .form-success h3{font-size:22px;margin-bottom:8px}
+#shraga .form-success p{font-size:15px}
+
+/* ===================== FOOTER ===================== */
+#shraga .footer{background:#0A1526;color:#B8C4D6;padding:64px 0 28px}
+#shraga .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.09)}
+#shraga .footer .brand{margin-bottom:18px;gap:10px}
+#shraga .footer .brand .brand-s{height:38px}
+#shraga .footer .brand .brand-wm svg{height:17px}
+#shraga .footer-about{font-size:14px;line-height:1.6;color:#8FA0B8;margin-bottom:20px;max-width:320px}
+#shraga .footer-contact{display:flex;flex-direction:column;gap:10px;font-size:14px}
+#shraga .footer-contact a{display:flex;align-items:center;gap:9px;color:#B8C4D6;transition:color .15s}
+#shraga .footer-contact a:hover{color:#fff}
+#shraga .footer-contact svg{width:16px;height:16px;color:var(--blue-bright);flex:0 0 auto}
+#shraga .footer h4{font-family:var(--ff-display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:18px;font-weight:600}
+#shraga .footer ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+#shraga .footer ul a{font-size:14px;color:#8FA0B8;transition:color .15s}
+#shraga .footer ul a:hover{color:#fff}
+#shraga .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#shraga .footer-bottom p{font-size:13px;color:#6B7C96}
+#shraga .footer-legal{display:flex;gap:22px}
+#shraga .footer-legal a{font-size:13px;color:#8FA0B8}
+#shraga .footer-legal a:hover{color:#fff}
+#shraga .disclaimer{font-size:11.5px;line-height:1.6;color:#5B6C86;margin-top:22px;max-width:960px}
+
+/* ===================== SCROLL REVEAL ===================== */
+#shraga .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+#shraga .reveal.in{opacity:1;transform:none}
+#shraga .reveal.d1{transition-delay:.08s}#shraga .reveal.d2{transition-delay:.16s}
+#shraga .reveal.d3{transition-delay:.24s}#shraga .reveal.d4{transition-delay:.32s}
+#shraga .reveal.d5{transition-delay:.40s}#shraga .reveal.d6{transition-delay:.48s}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:960px){
+  #shraga .cta-inner{grid-template-columns:1fr;gap:36px}
+  #shraga .result{grid-template-columns:1fr;gap:32px;padding:36px}
+  #shraga .sol-grid,#shraga .steps,#shraga .why-grid{grid-template-columns:repeat(2,1fr)}
+  #shraga .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:760px){
+  #shraga .nav-center{display:none}
+  #shraga .burger{display:block}
+  #shraga .brand .brand-s{height:36px}
+  #shraga .brand .brand-wm svg{height:18px}
+  #shraga .nav-inner{display:flex;justify-content:space-between;height:68px}
+  #shraga section{padding:64px 0}
+  #shraga .hero{padding:20px 0 48px}
+  #shraga .stats-inner{grid-template-columns:1fr 1fr}
+  #shraga .stat{border-bottom:1px solid var(--line-2)}
+  #shraga .stat:nth-child(odd){border-right:1px solid var(--line-2)}
+  #shraga .stat:nth-child(even){border-right:none}
+  #shraga .sol-grid,#shraga .steps,#shraga .why-grid,#shraga .field-row{grid-template-columns:1fr}
+  #shraga .footer-top{grid-template-columns:1fr}
+  #shraga .form{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  #shraga *,#shraga *::before,#shraga *::after{animation:none!important;transition:none!important}
+  #shraga .reveal{opacity:1;transform:none}
+}
+
+/* ===================== LIGHT / APPLE OVERRIDES ===================== */
+#shraga .grid-anim{display:none!important}
+/* Difference -> light */
+#shraga .diff{background:var(--bg-soft);color:var(--ink)}
+#shraga .diff .eyebrow{color:var(--blue)}
+#shraga .diff blockquote{color:var(--ink)}
+#shraga .diff blockquote em{color:var(--blue)}
+#shraga .diff cite{color:var(--ink-3)}
+#shraga .diff .diff-mark{filter:drop-shadow(0 10px 22px rgba(11,46,107,.16))}
+/* Apply/CTA -> light */
+#shraga .cta{background:var(--bg-soft);color:var(--ink)}
+#shraga .cta h2{color:var(--ink)}
+#shraga .cta p{color:var(--ink-2)}
+#shraga .cta .checklist li{color:var(--ink-2)}
+#shraga .cta .checklist svg{color:var(--blue)}
+#shraga .form{border:1px solid var(--line)}
+/* Footer -> light */
+#shraga .footer{background:var(--bg-soft);color:var(--ink-2)}
+#shraga .footer-top{border-bottom:1px solid var(--line)}
+#shraga .footer-about{color:var(--ink-2)}
+#shraga .footer-contact a{color:var(--ink-2)}
+#shraga .footer-contact a:hover{color:var(--ink)}
+#shraga .footer-contact svg{color:var(--blue)}
+#shraga .footer h4{color:var(--ink)}
+#shraga .footer ul a{color:var(--ink-2)}
+#shraga .footer ul a:hover{color:var(--ink)}
+#shraga .footer-bottom p{color:var(--ink-3)}
+#shraga .footer-legal a{color:var(--ink-2)}
+#shraga .footer-legal a:hover{color:var(--ink)}
+#shraga .disclaimer{color:var(--ink-3)}
+
+/* ===================== ACCENT CARDS (Tahoe callout look) ===================== */
+#shraga .sol,#shraga .why,#shraga .step{background:linear-gradient(135deg,var(--bg-blueprint) 0%,#fff 72%);border:1.5px solid var(--line);border-left:4px solid var(--blue)}
+#shraga .sol:hover,#shraga .why:hover,#shraga .step:hover{border-color:var(--line);border-left-color:var(--blue)}
+#shraga .sol-ico,#shraga .why-ico{background:#fff;box-shadow:0 2px 8px rgba(11,116,178,.12)}
+#shraga .sol-ico svg,#shraga .why-ico svg{color:var(--blue-bright)}
+#shraga .step-ico{background:#fff;box-shadow:0 2px 8px rgba(11,116,178,.12)}
+#shraga .step-ico svg{color:var(--blue-bright)}
+#shraga .sol.feat{background:linear-gradient(135deg,#D6EFF3 0%,#fff 78%);border-left:4px solid var(--blue-bright)}
+#shraga .sol.feat h3{color:var(--ink)}
+#shraga .sol.feat p{color:var(--ink-2)}
+#shraga .sol.feat .sol-ico{background:#fff}
+#shraga .sol.feat .sol-ico svg{color:var(--blue)}
+#shraga .sol.feat .terms{border-top-color:var(--line)}
+#shraga .sol.feat .terms .k{color:var(--ink-3)}
+#shraga .sol.feat .terms .v{color:var(--ink)}
+#shraga .sol.feat .tagpill{background:var(--blue);color:#fff}
+
+/* ===================== SAFETY: keep site light (no black, ever) ===================== */
+#shraga .diff,#shraga .cta,#shraga .footer{background:var(--bg-soft)!important;color:var(--ink)!important}
+#shraga .diff blockquote,#shraga .cta h2,#shraga .footer h4{color:var(--ink)!important}
+#shraga .footer-about,#shraga .footer ul a,#shraga .footer-contact a,#shraga .cta p,#shraga .cta .checklist li{color:var(--ink-2)!important}
+#shraga .grid-anim{display:none!important}
+</style>
+
+<!-- ============ NAV ============ -->
+<div class="nav" id="shragaNav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Shraga Funding home"><img class="brand-s" src="https://moneyrockets.github.io/shraga-funding-website/logos/icon-128.png" alt="Shraga Funding"><span class="brand-wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10243 700" fill="#173B54"><g transform="translate(0,700) scale(1,-1)"><path d="M311.03446780836765 -9.9051593323217Q229.12930847604596 -9.9051593323217 154.0948406676783 13.577606763494472Q79.06037285931065 37.06037285931065 34.767288098851076 74.28452200303491L80.29308476045958 174.8878170388034Q122.4568610448732 141.53435941903317 184.3922068068502 119.68090179926295Q246.32755256882723 97.82744417949274 311.2930847604596 97.82744417949274Q366.1896813353566 97.82744417949274 400.0560914805983 109.72832213310211Q433.92250162584 121.62920008671148 449.8880338174724 142.31888142206807Q465.8535660091047 163.00856275742467 465.8535660091047 188.93962714068937Q465.8535660091047 221 443.1121829611966 240.27156947756342Q420.3707999132885 259.54313895512684 383.6940711034034 271.39659657489705Q347.0173422935183 283.25005419466726 302.5345761977021 293.0560914805983Q258.05181010188596 302.8621287665294 213.50438976804682 316.42678300455236Q168.95696943420768 329.99143724257533 132.28024062432257 351.68539995664423Q95.60351181443747 373.3793626707132 72.86212876652938 409.1379796228051Q50.120745718621286 444.89659657489705 50.120745718621286 500.89659657489705Q50.120745718621286 558.0603728593106 80.52590505094298 605.4655321916323Q110.93106438326468 652.8706915239541 173.41811185779318 681.3879254281378Q235.9051593323217 709.9051593323217 331.7154779969651 709.9051593323217Q394.87925428137873 709.9051593323217 456.9137220897464 694.0344678083677Q518.948189898114 678.1637762844136 565.2412746585736 648.0344678083677L523.844786473011 546.6897897246911Q477.0689356167353 575.3018642965533 427.2628983308042 588.7372100585303Q377.45686104487316 602.1725558205072 330.58616952091916 602.1725558205072Q277.4309559939302 602.1725558205072 243.4998916106655 589.2070236288748Q209.56882722740082 576.2414914372425 194.1032950357685 554.9225016258399Q178.63776284413615 533.6035118144374 178.63776284413615 506.8017559072187Q178.63776284413615 474.87069152395406 201.37914589204422 455.66377628441364Q224.1205289399523 436.45686104487316 260.7972577498374 425.10340342510295Q297.4739865597225 413.74994580533274 342.0214068935617 403.57321699544764Q386.5688272274008 393.39648818556253 431.051593323217 380.26717970951654Q475.5343594190332 367.1378712334706 512.2110882289182 345.87925428137873Q548.8878170388034 324.6206373292868 571.6292000867115 288.92667461521785Q594.3705831346196 253.23271190114892 594.3705831346196 198.23271190114892Q594.3705831346196 142.0689356167353 563.5300780403209 94.66377628441361Q532.689572946022 47.25861695209191 469.8318339475395 18.676728809885105Q406.974094949057 -9.9051593323217 311.03446780836765 -9.9051593323217Z" transform="translate(0.0,0)"/><path d="M585.8794710600476 0V700H715.6551051376545V0ZM94.43973553002385 0V700H224.2153696076306V0ZM213.43951875135485 299.7931931497941V411.07749837416H595.7846303923694V299.7931931497941Z" transform="translate(674.0,0)"/><path d="M94.43973553002385 0V700H380.51723390418385Q520.6206373292868 700 600.2671797095165 633.7888033817472Q679.9137220897463 567.5776067634945 679.9137220897463 450.8017559072187Q679.9137220897463 374.155213526989 643.9611424235854 318.7026338608281Q608.0085627574247 263.25005419466726 541.2973661391719 233.5560914805983Q474.58616952091916 203.86212876652937 381.8103186646434 203.86212876652937H166.23271190114892L224.2153696076306 262.5517017125515V0ZM551.7501625840017 0 374.5260134402775 254.12930847604596H513.948189898114L692.3016475178842 0ZM224.2153696076306 248.74138304790807 166.23271190114892 311.3361153262519H376.38792542813786Q461.9569694342077 311.3361153262519 505.48287448515066 348.1378712334706Q549.0087795360937 384.93962714068937 549.0087795360937 450.8017559072187Q549.0087795360937 517.5345761977021 505.48287448515066 553.9009863429438Q461.9569694342077 590.2673964881856 376.38792542813786 590.2673964881856H166.23271190114892L224.2153696076306 653.7328202904835Z" transform="translate(1529.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(2305.0,0)"/><path d="M420.87069152395406 -9.9051593323217Q339.3534576197702 -9.9051593323217 270.46553219163235 16.594840667678298Q201.5776067634945 43.0948406676783 150.81898981140256 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 151.31898981140256 608.3405050942987Q202.5776067634945 656.9051593323217 271.59484066767834 683.4051593323217Q340.61207457186214 709.9051593323217 423.2586169520919 709.9051593323217Q511.58616952091916 709.9051593323217 583.0732169954476 681.0Q654.5602644699761 652.0948406676783 704.07749837416 595.8017559072188L621.8621287665294 515.9139388684154Q581.025905050943 557.3967049642315 533.3836440494256 576.8967049642315Q485.7413830479081 596.3967049642315 429.16377628441364 596.3967049642315Q373.6206373292868 596.3967049642315 326.88353566009107 578.3018642965533Q280.1464339908953 560.2070236288749 245.95675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.12074571862127Q174.70669846087145 404.06037285931063 174.70669846087145 350Q174.70669846087145 297.0689356167353 193.23688489052677 251.9439085194017Q211.76707132018208 206.81888142206807 245.95675265553868 173.37058313461955Q280.1464339908953 139.92228484717106 326.31888142206805 121.76278994146978Q372.4913288532408 103.60329503576848 427.9051593323217 103.60329503576848Q480.0948406676783 103.60329503576848 528.5431389551268 120.15071536960764Q576.9914372425753 136.69813570344678 620.8621287665294 175.79297637112506L694.5257966616085 79.0948406676783Q640.103403425103 35.224149143724254 567.6810101885975 12.659494905701276Q495.2586169520919 -9.9051593323217 420.87069152395406 -9.9051593323217ZM694.5257966616085 79.0948406676783 572.2414914372425 96.03446780836765V357.68101018859744H694.5257966616085Z" transform="translate(3099.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(3916.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H224.2153696076306V0ZM213.43951875135485 268.4052677216562V377.6206373292868H562.3620203771949V268.4052677216562Z" transform="translate(5010.0,0)"/><path d="M394.61207457186214 -9.9051593323217Q251.02590505094298 -9.9051593323217 169.7328202904834 71.0Q88.43973553002385 151.9051593323217 88.43973553002385 305.4223932365055V700H218.2153696076306V309.8103186646434Q218.2153696076306 201.94818989811404 264.6292000867115 152.77574246694127Q311.0430305657923 103.60329503576848 395.7413830479081 103.60329503576848Q480.5690440060698 103.60329503576848 526.9182202471277 152.77574246694127Q573.2673964881856 201.94818989811404 573.2673964881856 309.8103186646434V700H700.7844136137004V305.4223932365055Q700.7844136137004 151.9051593323217 619.4913288532408 71.0Q538.1982440927812 -9.9051593323217 394.61207457186214 -9.9051593323217Z" transform="translate(5692.0,0)"/><path d="M94.43973553002385 0V700H201.37058313461955L640.0862779102537 160.81010188597443H586.6553219163234V700H715.6551051376545V0H608.7242575330588L170.00856275742467 539.1898981140256H223.43951875135485V0Z" transform="translate(6526.0,0)"/><path d="M94.43973553002385 0V700H400.2586169520919Q513.7758508562757 700 599.7284305224366 656.1939627140689Q685.6810101885975 612.3879254281379 733.9396271406894 533.9525796661609Q782.1982440927812 455.51723390418385 782.1982440927812 350Q782.1982440927812 244.61207457186214 733.9396271406894 166.11207457186214Q685.6810101885975 87.61207457186212 599.7284305224366 43.80603728593106Q513.7758508562757 0 400.2586169520919 0ZM224.2153696076306 109.99122046390634H393.7413830479081Q472.4742033383915 109.99122046390634 530.0001083893344 139.8748645133319Q587.5260134402774 169.7585085627574 619.409657489703 223.80164751788422Q651.2933015391286 277.844786473011 651.2933015391286 350Q651.2933015391286 423.155213526989 619.409657489703 476.69835248211575Q587.5260134402774 530.2414914372425 530.0001083893344 560.1251354866681Q472.4742033383915 590.0087795360937 393.7413830479081 590.0087795360937H224.2153696076306Z" transform="translate(7381.0,0)"/><path d="M94.43973553002385 0V700H224.2153696076306V0Z" transform="translate(8252.0,0)"/><path d="M94.43973553002385 0V700H201.37058313461955L640.0862779102537 160.81010188597443H586.6553219163234V700H715.6551051376545V0H608.7242575330588L170.00856275742467 539.1898981140256H223.43951875135485V0Z" transform="translate(8616.0,0)"/><path d="M420.87069152395406 -9.9051593323217Q339.3534576197702 -9.9051593323217 270.46553219163235 16.594840667678298Q201.5776067634945 43.0948406676783 150.81898981140256 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 151.31898981140256 608.3405050942987Q202.5776067634945 656.9051593323217 271.59484066767834 683.4051593323217Q340.61207457186214 709.9051593323217 423.2586169520919 709.9051593323217Q511.58616952091916 709.9051593323217 583.0732169954476 681.0Q654.5602644699761 652.0948406676783 704.07749837416 595.8017559072188L621.8621287665294 515.9139388684154Q581.025905050943 557.3967049642315 533.3836440494256 576.8967049642315Q485.7413830479081 596.3967049642315 429.16377628441364 596.3967049642315Q373.6206373292868 596.3967049642315 326.88353566009107 578.3018642965533Q280.1464339908953 560.2070236288749 245.95675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.12074571862127Q174.70669846087145 404.06037285931063 174.70669846087145 350Q174.70669846087145 297.0689356167353 193.23688489052677 251.9439085194017Q211.76707132018208 206.81888142206807 245.95675265553868 173.37058313461955Q280.1464339908953 139.92228484717106 326.31888142206805 121.76278994146978Q372.4913288532408 103.60329503576848 427.9051593323217 103.60329503576848Q480.0948406676783 103.60329503576848 528.5431389551268 120.15071536960764Q576.9914372425753 136.69813570344678 620.8621287665294 175.79297637112506L694.5257966616085 79.0948406676783Q640.103403425103 35.224149143724254 567.6810101885975 12.659494905701276Q495.2586169520919 -9.9051593323217 420.87069152395406 -9.9051593323217ZM694.5257966616085 79.0948406676783 572.2414914372425 96.03446780836765V357.68101018859744H694.5257966616085Z" transform="translate(9471.0,0)"/></g></svg></span></a>
+    <div class="nav-center">
+      <nav class="nav-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#how">How It Works</a>
+        <a href="#why">Why Shraga</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="tel:+18186063481" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (818) 606-3481
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="https://form.jotform.com/262078276860162" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
+      <button class="burger" aria-label="Menu" onclick="var m=document.getElementById('shragaMobile');m.style.display=(m.style.display==='flex'?'none':'flex')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="shragaMobile">
+    <a href="#solutions" onclick="document.getElementById('shragaMobile').style.display='none'">Solutions</a>
+    <a href="#how" onclick="document.getElementById('shragaMobile').style.display='none'">How It Works</a>
+    <a href="#why" onclick="document.getElementById('shragaMobile').style.display='none'">Why Shraga</a>
+    <a href="#faq" onclick="document.getElementById('shragaMobile').style.display='none'">FAQ</a>
+    <a href="https://form.jotform.com/262078276860162" target="_blank" rel="noopener" class="btn btn-primary" onclick="document.getElementById('shragaMobile').style.display='none'">Apply Now</a>
+  </div>
+</div>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="grid-anim"></div>
+  <div class="hero-banner reveal">
+    <img src="https://moneyrockets.github.io/shraga-funding-website/logos/hero.webp" alt="Shraga Funding — direct capital for construction and commercial real estate">
+    <span class="shimmer"></span>
+  </div>
+  <div class="wrap hero-inner">
+    <h1 class="hero-h1 reveal d1">Capital that's <span class="accent">ready to break ground</span></h1>
+    <p class="hero-sub reveal d2">A direct lender for builders, developers, and growing businesses. We fund with our own capital, underwrite in-house, and decide fast, so your project never waits on a committee.</p>
+    <div class="hero-ctas reveal d3">
+      <a href="https://form.jotform.com/262078276860162" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Get funded</a>
+      <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+    </div>
+    <div class="hero-trust reveal d4">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Decisions in 24 hours</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> Soft-pull application</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> In-house underwriting</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap stats-inner">
+    <div class="stat"><b data-count="10" data-prefix="$" data-suffix="M+">$10M+</b><span>Max facility size</span></div>
+    <div class="stat"><b data-count="24" data-suffix=" hrs">24 hrs</b><span>To a decision</span></div>
+    <div class="stat"><b data-count="6" data-suffix="">6</b><span>Financing products</span></div>
+    <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>Our own capital</span></div>
+  </div>
+</div>
+
+<!-- ============ DIFFERENCE ============ -->
+<section class="diff">
+  <div class="grid-anim"></div>
+  <div class="wrap diff-inner">
+    <img class="diff-mark" src="https://moneyrockets.github.io/shraga-funding-website/logos/icon-256.png" alt="Shraga Funding mark">
+    <div class="diff-eyebrow reveal" aria-label="The Shraga Difference"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15650 700" fill="#11AEC6"><g transform="translate(0,700) scale(1,-1)"><path d="M235.99143724257533 0V590.1380880121396H4V700H597.7585085627575V590.1380880121396H365.7670713201821V0Z" transform="translate(0.0,0)"/><path d="M585.8794710600476 0V700H715.6551051376545V0ZM94.43973553002385 0V700H224.2153696076306V0ZM213.43951875135485 299.7931931497941V411.07749837416H595.7846303923694V299.7931931497941Z" transform="translate(702.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H223.69813570344678V109.2153696076306H618.974094949057V0ZM213.79297637112506 302.2155863862996V408.65510513765446H562.3620203771949V302.2155863862996Z" transform="translate(1612.0,0)"/><path d="M311.03446780836765 -9.9051593323217Q229.12930847604596 -9.9051593323217 154.0948406676783 13.577606763494472Q79.06037285931065 37.06037285931065 34.767288098851076 74.28452200303491L80.29308476045958 174.8878170388034Q122.4568610448732 141.53435941903317 184.3922068068502 119.68090179926295Q246.32755256882723 97.82744417949274 311.2930847604596 97.82744417949274Q366.1896813353566 97.82744417949274 400.0560914805983 109.72832213310211Q433.92250162584 121.62920008671148 449.8880338174724 142.31888142206807Q465.8535660091047 163.00856275742467 465.8535660091047 188.93962714068937Q465.8535660091047 221 443.1121829611966 240.27156947756342Q420.3707999132885 259.54313895512684 383.6940711034034 271.39659657489705Q347.0173422935183 283.25005419466726 302.5345761977021 293.0560914805983Q258.05181010188596 302.8621287665294 213.50438976804682 316.42678300455236Q168.95696943420768 329.99143724257533 132.28024062432257 351.68539995664423Q95.60351181443747 373.3793626707132 72.86212876652938 409.1379796228051Q50.120745718621286 444.89659657489705 50.120745718621286 500.89659657489705Q50.120745718621286 558.0603728593106 80.52590505094298 605.4655321916323Q110.93106438326468 652.8706915239541 173.41811185779318 681.3879254281378Q235.9051593323217 709.9051593323217 331.7154779969651 709.9051593323217Q394.87925428137873 709.9051593323217 456.9137220897464 694.0344678083677Q518.948189898114 678.1637762844136 565.2412746585736 648.0344678083677L523.844786473011 546.6897897246911Q477.0689356167353 575.3018642965533 427.2628983308042 588.7372100585303Q377.45686104487316 602.1725558205072 330.58616952091916 602.1725558205072Q277.4309559939302 602.1725558205072 243.4998916106655 589.2070236288748Q209.56882722740082 576.2414914372425 194.1032950357685 554.9225016258399Q178.63776284413615 533.6035118144374 178.63776284413615 506.8017559072187Q178.63776284413615 474.87069152395406 201.37914589204422 455.66377628441364Q224.1205289399523 436.45686104487316 260.7972577498374 425.10340342510295Q297.4739865597225 413.74994580533274 342.0214068935617 403.57321699544764Q386.5688272274008 393.39648818556253 431.051593323217 380.26717970951654Q475.5343594190332 367.1378712334706 512.2110882289182 345.87925428137873Q548.8878170388034 324.6206373292868 571.6292000867115 288.92667461521785Q594.3705831346196 253.23271190114892 594.3705831346196 198.23271190114892Q594.3705831346196 142.0689356167353 563.5300780403209 94.66377628441361Q532.689572946022 47.25861695209191 469.8318339475395 18.676728809885105Q406.974094949057 -9.9051593323217 311.03446780836765 -9.9051593323217Z" transform="translate(2702.0,0)"/><path d="M585.8794710600476 0V700H715.6551051376545V0ZM94.43973553002385 0V700H224.2153696076306V0ZM213.43951875135485 299.7931931497941V411.07749837416H595.7846303923694V299.7931931497941Z" transform="translate(3431.0,0)"/><path d="M94.43973553002385 0V700H380.51723390418385Q520.6206373292868 700 600.2671797095165 633.7888033817472Q679.9137220897463 567.5776067634945 679.9137220897463 450.8017559072187Q679.9137220897463 374.155213526989 643.9611424235854 318.7026338608281Q608.0085627574247 263.25005419466726 541.2973661391719 233.5560914805983Q474.58616952091916 203.86212876652937 381.8103186646434 203.86212876652937H166.23271190114892L224.2153696076306 262.5517017125515V0ZM551.7501625840017 0 374.5260134402775 254.12930847604596H513.948189898114L692.3016475178842 0ZM224.2153696076306 248.74138304790807 166.23271190114892 311.3361153262519H376.38792542813786Q461.9569694342077 311.3361153262519 505.48287448515066 348.1378712334706Q549.0087795360937 384.93962714068937 549.0087795360937 450.8017559072187Q549.0087795360937 517.5345761977021 505.48287448515066 553.9009863429438Q461.9569694342077 590.2673964881856 376.38792542813786 590.2673964881856H166.23271190114892L224.2153696076306 653.7328202904835Z" transform="translate(4341.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(5172.0,0)"/><path d="M420.87069152395406 -9.9051593323217Q339.3534576197702 -9.9051593323217 270.46553219163235 16.594840667678298Q201.5776067634945 43.0948406676783 150.81898981140256 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 151.31898981140256 608.3405050942987Q202.5776067634945 656.9051593323217 271.59484066767834 683.4051593323217Q340.61207457186214 709.9051593323217 423.2586169520919 709.9051593323217Q511.58616952091916 709.9051593323217 583.0732169954476 681.0Q654.5602644699761 652.0948406676783 704.07749837416 595.8017559072188L621.8621287665294 515.9139388684154Q581.025905050943 557.3967049642315 533.3836440494256 576.8967049642315Q485.7413830479081 596.3967049642315 429.16377628441364 596.3967049642315Q373.6206373292868 596.3967049642315 326.88353566009107 578.3018642965533Q280.1464339908953 560.2070236288749 245.95675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.12074571862127Q174.70669846087145 404.06037285931063 174.70669846087145 350Q174.70669846087145 297.0689356167353 193.23688489052677 251.9439085194017Q211.76707132018208 206.81888142206807 245.95675265553868 173.37058313461955Q280.1464339908953 139.92228484717106 326.31888142206805 121.76278994146978Q372.4913288532408 103.60329503576848 427.9051593323217 103.60329503576848Q480.0948406676783 103.60329503576848 528.5431389551268 120.15071536960764Q576.9914372425753 136.69813570344678 620.8621287665294 175.79297637112506L694.5257966616085 79.0948406676783Q640.103403425103 35.224149143724254 567.6810101885975 12.659494905701276Q495.2586169520919 -9.9051593323217 420.87069152395406 -9.9051593323217ZM694.5257966616085 79.0948406676783 572.2414914372425 96.03446780836765V357.68101018859744H694.5257966616085Z" transform="translate(6021.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(6893.0,0)"/><path d="M94.43973553002385 0V700H400.2586169520919Q513.7758508562757 700 599.7284305224366 656.1939627140689Q685.6810101885975 612.3879254281379 733.9396271406894 533.9525796661609Q782.1982440927812 455.51723390418385 782.1982440927812 350Q782.1982440927812 244.61207457186214 733.9396271406894 166.11207457186214Q685.6810101885975 87.61207457186212 599.7284305224366 43.80603728593106Q513.7758508562757 0 400.2586169520919 0ZM224.2153696076306 109.99122046390634H393.7413830479081Q472.4742033383915 109.99122046390634 530.0001083893344 139.8748645133319Q587.5260134402774 169.7585085627574 619.409657489703 223.80164751788422Q651.2933015391286 277.844786473011 651.2933015391286 350Q651.2933015391286 423.155213526989 619.409657489703 476.69835248211575Q587.5260134402774 530.2414914372425 530.0001083893344 560.1251354866681Q472.4742033383915 590.0087795360937 393.7413830479081 590.0087795360937H224.2153696076306Z" transform="translate(8062.0,0)"/><path d="M94.43973553002385 0V700H224.2153696076306V0Z" transform="translate(8988.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H224.2153696076306V0ZM213.43951875135485 268.4052677216562V377.6206373292868H562.3620203771949V268.4052677216562Z" transform="translate(9407.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H224.2153696076306V0ZM213.43951875135485 268.4052677216562V377.6206373292868H562.3620203771949V268.4052677216562Z" transform="translate(10144.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H223.69813570344678V109.2153696076306H618.974094949057V0ZM213.79297637112506 302.2155863862996V408.65510513765446H562.3620203771949V302.2155863862996Z" transform="translate(10881.0,0)"/><path d="M94.43973553002385 0V700H380.51723390418385Q520.6206373292868 700 600.2671797095165 633.7888033817472Q679.9137220897463 567.5776067634945 679.9137220897463 450.8017559072187Q679.9137220897463 374.155213526989 643.9611424235854 318.7026338608281Q608.0085627574247 263.25005419466726 541.2973661391719 233.5560914805983Q474.58616952091916 203.86212876652937 381.8103186646434 203.86212876652937H166.23271190114892L224.2153696076306 262.5517017125515V0ZM551.7501625840017 0 374.5260134402775 254.12930847604596H513.948189898114L692.3016475178842 0ZM224.2153696076306 248.74138304790807 166.23271190114892 311.3361153262519H376.38792542813786Q461.9569694342077 311.3361153262519 505.48287448515066 348.1378712334706Q549.0087795360937 384.93962714068937 549.0087795360937 450.8017559072187Q549.0087795360937 517.5345761977021 505.48287448515066 553.9009863429438Q461.9569694342077 590.2673964881856 376.38792542813786 590.2673964881856H166.23271190114892L224.2153696076306 653.7328202904835Z" transform="translate(11651.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H223.69813570344678V109.2153696076306H618.974094949057V0ZM213.79297637112506 302.2155863862996V408.65510513765446H562.3620203771949V302.2155863862996Z" transform="translate(12482.0,0)"/><path d="M94.43973553002385 0V700H201.37058313461955L640.0862779102537 160.81010188597443H586.6553219163234V700H715.6551051376545V0H608.7242575330588L170.00856275742467 539.1898981140256H223.43951875135485V0Z" transform="translate(13252.0,0)"/><path d="M418.12930847604594 -9.9051593323217Q337.61207457186214 -9.9051593323217 269.1594949057013 16.594840667678298Q200.70691523954042 43.0948406676783 150.38364404942553 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 150.81898981140256 608.3405050942987Q201.5776067634945 656.9051593323217 270.0301864296553 683.4051593323217Q338.48276609581615 709.9051593323217 419 709.9051593323217Q504.58616952091916 709.9051593323217 575.8146000433558 680.435345761977Q647.0430305657924 650.9655321916323 695.5602644699761 593.4138304790808L611.8621287665294 513.5260134402774Q573.896596574897 555.1380880121396 526.8189898114025 575.7673964881856Q479.7413830479081 596.3967049642315 424.9051593323217 596.3967049642315Q370.4913288532408 596.3967049642315 324.81888142206805 578.3018642965533Q279.1464339908953 560.2070236288749 245.45675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.0560914805983Q174.70669846087145 403.9310643832647 174.70669846087145 350Q174.70669846087145 296.0689356167353 193.23688489052677 250.9439085194017Q211.76707132018208 205.81888142206807 245.45675265553868 172.80592889659658Q279.1464339908953 139.79297637112506 324.81888142206805 121.69813570344678Q370.4913288532408 103.60329503576848 424.9051593323217 103.60329503576848Q479.7413830479081 103.60329503576848 526.8189898114025 124.23260351181443Q573.896596574897 144.8619119878604 611.8621287665294 187.34467808367657L695.5602644699761 107.4568610448732Q647.0430305657924 50.03446780836766 575.8146000433558 20.064654238022978Q504.58616952091916 -9.9051593323217 418.12930847604594 -9.9051593323217Z" transform="translate(14162.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H223.69813570344678V109.2153696076306H618.974094949057V0ZM213.79297637112506 302.2155863862996V408.65510513765446H562.3620203771949V302.2155863862996Z" transform="translate(14980.0,0)"/></g></svg></div>
+    <blockquote class="reveal d1">We're not a middleman shopping your file around. We're the <em>lender</em> writing the check, so the answer comes from the same people who fund the deal.</blockquote>
+    <cite class="reveal d2">A direct lending desk built by people who've financed real projects</cite>
+  </div>
+</section>
+
+<!-- ============ SOLUTIONS ============ -->
+<section id="solutions">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Financing solutions</span>
+      <h2><span class="u">One lender.</span> Every stage of growth.</h2>
+      <p>From breaking ground to scaling operations, we structure capital around the way your business actually works.</p>
+    </div>
+    <div class="sol-grid">
+      <div class="sol reveal">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9h6v12M3 9h18"/></svg></div>
+        <h3>Commercial Real Estate</h3>
+        <p>Purchase, refinance, and cash-out on stabilized commercial property with competitive LTV.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">Up to $10M</span></div><div><span class="k">Term</span><span class="v">Up to 25 yr</span></div></div>
+      </div>
+      <div class="sol reveal d2">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18M18 3v18M3 8h18M3 16h18"/></svg></div>
+        <h3>Bridge Financing</h3>
+        <p>Short-term capital to close quickly and reposition, refinanced out on your timeline.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">$100K–$8M</span></div><div><span class="k">Term</span><span class="v">6–24 mo</span></div></div>
+      </div>
+      <div class="sol reveal">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Term Loans</h3>
+        <p>Fixed payments and clear maturities for expansion, equipment, or refinancing existing debt.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">$25K–$5M</span></div><div><span class="k">Term</span><span class="v">12–60 mo</span></div></div>
+      </div>
+      <div class="sol reveal d1">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Lines of Credit</h3>
+        <p>Revolving access you draw on as you need it, paying interest only on what you use.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">$10K–$1M</span></div><div><span class="k">Draw</span><span class="v">Revolving</span></div></div>
+      </div>
+      <div class="sol reveal">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg></div>
+        <h3>SBA-Style Loans</h3>
+        <p>Longer terms and lower payments for qualifying businesses ready for their next chapter.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">Up to $5M</span></div><div><span class="k">Term</span><span class="v">Up to 25 yr</span></div></div>
+      </div>
+      <div class="sol reveal d1">
+        <div class="sol-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+        <h3>Working Capital</h3>
+        <p>Fast capital against future revenue to cover payroll, materials, and momentum.</p>
+        <div class="terms"><div><span class="k">Amount</span><span class="v">$10K–$1M</span></div><div><span class="k">Speed</span><span class="v">24-hr funding</span></div></div>
+      </div>
+      <div class="sol reveal d2" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:var(--bg-soft)">
+        <h3 style="margin-bottom:10px">Not sure which fits?</h3>
+        <p style="margin-bottom:18px">Tell us about the project and we'll structure the right facility.</p>
+        <a href="https://form.jotform.com/262078276860162" target="_blank" rel="noopener" class="btn btn-primary">Talk to a specialist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From application to <span class="u">funded in three moves</span></h2>
+      <p>No runaround, no shopping your file to a dozen desks. One application, one decision, one lender.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">STEP 01</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Apply in minutes</h3>
+        <p>Share the basics on your business and the project. A soft credit pull only, so applying never dings your score.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-num">STEP 02</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Get a real decision</h3>
+        <p>Our in-house team underwrites your file and comes back with a structured term sheet, usually within 24 hours.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">STEP 03</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+        <h3>Get funded</h3>
+        <p>Sign, and we fund with our own capital, draws for construction, lump sum for the rest. No middleman, no delay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Shraga</span>
+      <h2>Built for <span class="u">people who build</span></h2>
+      <p>We understand draw schedules, retainage, and closing pressure, because we finance real projects, not spreadsheets.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal">
+        <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><h3>We lend our own capital</h3><p>No syndication, no shopping your deal around. The people who say yes are the people who fund it.</p></div>
+      </div>
+      <div class="why reveal d1">
+        <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><h3>Decisions in 24 hours</h3><p>In-house underwriting means term sheets in a day, not weeks. Projects move on your schedule, not a committee's.</p></div>
+      </div>
+      <div class="why reveal">
+        <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2Z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7Z"/></svg></div>
+        <div><h3>Radical transparency</h3><p>Full rate, fees, and terms up front. No teaser rates, no surprises at closing, ever.</p></div>
+      </div>
+      <div class="why reveal d1">
+        <div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 3l3 3-3 3M7 14l-3 3 3 3"/></svg></div>
+        <div><h3>Flexible structures</h3><p>Interest-only draws, seasonal payments, bridge-to-perm, we build the facility around your cash flow.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section style="padding-top:0">
+  <div class="wrap" style="display:flex;justify-content:center">
+    <div class="result reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;display:inline-block">Client story</div>
+        <blockquote>"Shraga structured our draws around the actual build. We closed in days and never once waited on a bank committee to release funds."</blockquote>
+        <div class="who">
+          <div class="avatar">JV</div>
+          <div><b>Joe and Vera Builders Inc.</b><span>Los Angeles, CA</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="result-stat"><b>$1.25M</b><span>funded for a ground-up build</span></div>
+        <div class="result-stat"><b>4 days</b><span>from application to close</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, <span class="u">answered</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal"><summary>Is Shraga Funding a direct lender or a broker?<span class="plus"></span></summary><div class="faq-body">We're a direct lender. We fund with our own capital and underwrite in-house, so the team that approves your deal is the team that writes the check. You're not being shopped to a network of third parties.</div></details>
+      <details class="faq reveal"><summary>Will applying hurt my credit?<span class="plus"></span></summary><div class="faq-body">No. Our initial application uses a soft credit pull only, which never impacts your score. A hard pull happens only later, with your consent, if you move forward with a formal offer.</div></details>
+      <details class="faq reveal"><summary>How fast can I actually get funded?<span class="plus"></span></summary><div class="faq-body">Most applicants receive a decision within 24 hours. Working capital and term loans can fund in as little as one business day; construction and real estate facilities fund on a draw or closing schedule set at term sheet.</div></details>
+      <details class="faq reveal"><summary>What types of projects and businesses do you finance?<span class="plus"></span></summary><div class="faq-body">We finance construction and commercial real estate, plus general business needs, term loans, lines of credit, equipment, and working capital, across most industries. If you have revenue or a fundable project, we want to hear about it.</div></details>
+      <details class="faq reveal"><summary>How much can I borrow?<span class="plus"></span></summary><div class="faq-body">Facilities range from $10,000 for working capital up to $10M+ for construction and commercial real estate. The amount depends on your project, revenue, collateral, and use of funds.</div></details>
+      <details class="faq reveal"><summary>What documents do I need to apply?<span class="plus"></span></summary><div class="faq-body">To start, just the basics: business details, recent bank statements, and an overview of your funding need. For construction and real estate, we'll also request project plans, a budget, and any relevant appraisals or contracts.</div></details>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="brand"><img class="brand-s" src="https://moneyrockets.github.io/shraga-funding-website/logos/icon-128.png" alt="Shraga Funding"><span class="brand-wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10243 700" fill="#173B54"><g transform="translate(0,700) scale(1,-1)"><path d="M311.03446780836765 -9.9051593323217Q229.12930847604596 -9.9051593323217 154.0948406676783 13.577606763494472Q79.06037285931065 37.06037285931065 34.767288098851076 74.28452200303491L80.29308476045958 174.8878170388034Q122.4568610448732 141.53435941903317 184.3922068068502 119.68090179926295Q246.32755256882723 97.82744417949274 311.2930847604596 97.82744417949274Q366.1896813353566 97.82744417949274 400.0560914805983 109.72832213310211Q433.92250162584 121.62920008671148 449.8880338174724 142.31888142206807Q465.8535660091047 163.00856275742467 465.8535660091047 188.93962714068937Q465.8535660091047 221 443.1121829611966 240.27156947756342Q420.3707999132885 259.54313895512684 383.6940711034034 271.39659657489705Q347.0173422935183 283.25005419466726 302.5345761977021 293.0560914805983Q258.05181010188596 302.8621287665294 213.50438976804682 316.42678300455236Q168.95696943420768 329.99143724257533 132.28024062432257 351.68539995664423Q95.60351181443747 373.3793626707132 72.86212876652938 409.1379796228051Q50.120745718621286 444.89659657489705 50.120745718621286 500.89659657489705Q50.120745718621286 558.0603728593106 80.52590505094298 605.4655321916323Q110.93106438326468 652.8706915239541 173.41811185779318 681.3879254281378Q235.9051593323217 709.9051593323217 331.7154779969651 709.9051593323217Q394.87925428137873 709.9051593323217 456.9137220897464 694.0344678083677Q518.948189898114 678.1637762844136 565.2412746585736 648.0344678083677L523.844786473011 546.6897897246911Q477.0689356167353 575.3018642965533 427.2628983308042 588.7372100585303Q377.45686104487316 602.1725558205072 330.58616952091916 602.1725558205072Q277.4309559939302 602.1725558205072 243.4998916106655 589.2070236288748Q209.56882722740082 576.2414914372425 194.1032950357685 554.9225016258399Q178.63776284413615 533.6035118144374 178.63776284413615 506.8017559072187Q178.63776284413615 474.87069152395406 201.37914589204422 455.66377628441364Q224.1205289399523 436.45686104487316 260.7972577498374 425.10340342510295Q297.4739865597225 413.74994580533274 342.0214068935617 403.57321699544764Q386.5688272274008 393.39648818556253 431.051593323217 380.26717970951654Q475.5343594190332 367.1378712334706 512.2110882289182 345.87925428137873Q548.8878170388034 324.6206373292868 571.6292000867115 288.92667461521785Q594.3705831346196 253.23271190114892 594.3705831346196 198.23271190114892Q594.3705831346196 142.0689356167353 563.5300780403209 94.66377628441361Q532.689572946022 47.25861695209191 469.8318339475395 18.676728809885105Q406.974094949057 -9.9051593323217 311.03446780836765 -9.9051593323217Z" transform="translate(0.0,0)"/><path d="M585.8794710600476 0V700H715.6551051376545V0ZM94.43973553002385 0V700H224.2153696076306V0ZM213.43951875135485 299.7931931497941V411.07749837416H595.7846303923694V299.7931931497941Z" transform="translate(674.0,0)"/><path d="M94.43973553002385 0V700H380.51723390418385Q520.6206373292868 700 600.2671797095165 633.7888033817472Q679.9137220897463 567.5776067634945 679.9137220897463 450.8017559072187Q679.9137220897463 374.155213526989 643.9611424235854 318.7026338608281Q608.0085627574247 263.25005419466726 541.2973661391719 233.5560914805983Q474.58616952091916 203.86212876652937 381.8103186646434 203.86212876652937H166.23271190114892L224.2153696076306 262.5517017125515V0ZM551.7501625840017 0 374.5260134402775 254.12930847604596H513.948189898114L692.3016475178842 0ZM224.2153696076306 248.74138304790807 166.23271190114892 311.3361153262519H376.38792542813786Q461.9569694342077 311.3361153262519 505.48287448515066 348.1378712334706Q549.0087795360937 384.93962714068937 549.0087795360937 450.8017559072187Q549.0087795360937 517.5345761977021 505.48287448515066 553.9009863429438Q461.9569694342077 590.2673964881856 376.38792542813786 590.2673964881856H166.23271190114892L224.2153696076306 653.7328202904835Z" transform="translate(1529.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(2305.0,0)"/><path d="M420.87069152395406 -9.9051593323217Q339.3534576197702 -9.9051593323217 270.46553219163235 16.594840667678298Q201.5776067634945 43.0948406676783 150.81898981140256 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 151.31898981140256 608.3405050942987Q202.5776067634945 656.9051593323217 271.59484066767834 683.4051593323217Q340.61207457186214 709.9051593323217 423.2586169520919 709.9051593323217Q511.58616952091916 709.9051593323217 583.0732169954476 681.0Q654.5602644699761 652.0948406676783 704.07749837416 595.8017559072188L621.8621287665294 515.9139388684154Q581.025905050943 557.3967049642315 533.3836440494256 576.8967049642315Q485.7413830479081 596.3967049642315 429.16377628441364 596.3967049642315Q373.6206373292868 596.3967049642315 326.88353566009107 578.3018642965533Q280.1464339908953 560.2070236288749 245.95675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.12074571862127Q174.70669846087145 404.06037285931063 174.70669846087145 350Q174.70669846087145 297.0689356167353 193.23688489052677 251.9439085194017Q211.76707132018208 206.81888142206807 245.95675265553868 173.37058313461955Q280.1464339908953 139.92228484717106 326.31888142206805 121.76278994146978Q372.4913288532408 103.60329503576848 427.9051593323217 103.60329503576848Q480.0948406676783 103.60329503576848 528.5431389551268 120.15071536960764Q576.9914372425753 136.69813570344678 620.8621287665294 175.79297637112506L694.5257966616085 79.0948406676783Q640.103403425103 35.224149143724254 567.6810101885975 12.659494905701276Q495.2586169520919 -9.9051593323217 420.87069152395406 -9.9051593323217ZM694.5257966616085 79.0948406676783 572.2414914372425 96.03446780836765V357.68101018859744H694.5257966616085Z" transform="translate(3099.0,0)"/><path fill-rule="evenodd" d="M30.0,0 L374.5,700 L719.0,0 Z M192.7,0 L374.5,558.2 L556.3,0 Z" transform="translate(3916.0,0)"/><path d="M94.43973553002385 0V700H605.103403425103V590.7846303923694H224.2153696076306V0ZM213.43951875135485 268.4052677216562V377.6206373292868H562.3620203771949V268.4052677216562Z" transform="translate(5010.0,0)"/><path d="M394.61207457186214 -9.9051593323217Q251.02590505094298 -9.9051593323217 169.7328202904834 71.0Q88.43973553002385 151.9051593323217 88.43973553002385 305.4223932365055V700H218.2153696076306V309.8103186646434Q218.2153696076306 201.94818989811404 264.6292000867115 152.77574246694127Q311.0430305657923 103.60329503576848 395.7413830479081 103.60329503576848Q480.5690440060698 103.60329503576848 526.9182202471277 152.77574246694127Q573.2673964881856 201.94818989811404 573.2673964881856 309.8103186646434V700H700.7844136137004V305.4223932365055Q700.7844136137004 151.9051593323217 619.4913288532408 71.0Q538.1982440927812 -9.9051593323217 394.61207457186214 -9.9051593323217Z" transform="translate(5692.0,0)"/><path d="M94.43973553002385 0V700H201.37058313461955L640.0862779102537 160.81010188597443H586.6553219163234V700H715.6551051376545V0H608.7242575330588L170.00856275742467 539.1898981140256H223.43951875135485V0Z" transform="translate(6526.0,0)"/><path d="M94.43973553002385 0V700H400.2586169520919Q513.7758508562757 700 599.7284305224366 656.1939627140689Q685.6810101885975 612.3879254281379 733.9396271406894 533.9525796661609Q782.1982440927812 455.51723390418385 782.1982440927812 350Q782.1982440927812 244.61207457186214 733.9396271406894 166.11207457186214Q685.6810101885975 87.61207457186212 599.7284305224366 43.80603728593106Q513.7758508562757 0 400.2586169520919 0ZM224.2153696076306 109.99122046390634H393.7413830479081Q472.4742033383915 109.99122046390634 530.0001083893344 139.8748645133319Q587.5260134402774 169.7585085627574 619.409657489703 223.80164751788422Q651.2933015391286 277.844786473011 651.2933015391286 350Q651.2933015391286 423.155213526989 619.409657489703 476.69835248211575Q587.5260134402774 530.2414914372425 530.0001083893344 560.1251354866681Q472.4742033383915 590.0087795360937 393.7413830479081 590.0087795360937H224.2153696076306Z" transform="translate(7381.0,0)"/><path d="M94.43973553002385 0V700H224.2153696076306V0Z" transform="translate(8252.0,0)"/><path d="M94.43973553002385 0V700H201.37058313461955L640.0862779102537 160.81010188597443H586.6553219163234V700H715.6551051376545V0H608.7242575330588L170.00856275742467 539.1898981140256H223.43951875135485V0Z" transform="translate(8616.0,0)"/><path d="M420.87069152395406 -9.9051593323217Q339.3534576197702 -9.9051593323217 270.46553219163235 16.594840667678298Q201.5776067634945 43.0948406676783 150.81898981140256 91.65949490570128Q100.06037285931065 140.22414914372425 71.9310643832647 205.91811185779318Q43.801755907218734 271.61207457186214 43.801755907218734 350Q43.801755907218734 428.38792542813786 71.9310643832647 494.0818881422068Q100.06037285931065 559.7758508562757 151.31898981140256 608.3405050942987Q202.5776067634945 656.9051593323217 271.59484066767834 683.4051593323217Q340.61207457186214 709.9051593323217 423.2586169520919 709.9051593323217Q511.58616952091916 709.9051593323217 583.0732169954476 681.0Q654.5602644699761 652.0948406676783 704.07749837416 595.8017559072188L621.8621287665294 515.9139388684154Q581.025905050943 557.3967049642315 533.3836440494256 576.8967049642315Q485.7413830479081 596.3967049642315 429.16377628441364 596.3967049642315Q373.6206373292868 596.3967049642315 326.88353566009107 578.3018642965533Q280.1464339908953 560.2070236288749 245.95675265553868 527.1940711034034Q211.76707132018208 494.18111857793195 193.23688489052677 449.12074571862127Q174.70669846087145 404.06037285931063 174.70669846087145 350Q174.70669846087145 297.0689356167353 193.23688489052677 251.9439085194017Q211.76707132018208 206.81888142206807 245.95675265553868 173.37058313461955Q280.1464339908953 139.92228484717106 326.31888142206805 121.76278994146978Q372.4913288532408 103.60329503576848 427.9051593323217 103.60329503576848Q480.0948406676783 103.60329503576848 528.5431389551268 120.15071536960764Q576.9914372425753 136.69813570344678 620.8621287665294 175.79297637112506L694.5257966616085 79.0948406676783Q640.103403425103 35.224149143724254 567.6810101885975 12.659494905701276Q495.2586169520919 -9.9051593323217 420.87069152395406 -9.9051593323217ZM694.5257966616085 79.0948406676783 572.2414914372425 96.03446780836765V357.68101018859744H694.5257966616085Z" transform="translate(9471.0,0)"/></g></svg></span></div>
+        <p class="footer-about">A direct lender providing construction, commercial real estate, and business financing, underwritten in-house and funded with our own capital.</p>
+        <div class="footer-contact">
+          <a href="tel:+18186063481"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> (818) 606-3481</a>
+          <a href="mailto:info@shragafunding.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg> info@shragafunding.com</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> 16218 Ventura Blvd, Suite 2, Encino, CA 91436</a>
+        </div>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#solutions">Commercial Real Estate</a></li>
+          <li><a href="#solutions">Bridge Financing</a></li>
+          <li><a href="#solutions">Term Loans</a></li>
+          <li><a href="#solutions">Lines of Credit</a></li>
+          <li><a href="#solutions">Working Capital</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Shraga</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://form.jotform.com/262078276860162" target="_blank" rel="noopener">Apply</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-use">Terms of Use</a></li>
+          <li><a href="mailto:info@shragafunding.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shraga Funding LLC. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-of-use">Terms</a>
+      </div>
+    </div>
+    <p class="disclaimer">Shraga Funding LLC is a direct commercial lender. All loan products are subject to credit approval, underwriting requirements, and final documentation. Rates, terms, and funding amounts shown are illustrative estimates only and are not a commitment to lend or a guarantee of any specific terms. Products and availability may vary by state and by borrower qualification. Not all applicants will qualify.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('shraga');
+  if(!root) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* nav scroll shadow */
+  var nav=document.getElementById('shragaNav');
+  function onScroll(){ if(nav){ nav.classList.toggle('scrolled', window.pageYOffset>16); } }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* scroll reveal + section-head underline + stat counters */
+  var io;
+  function animateCount(el){
+    var target=parseFloat(el.getAttribute('data-count'));
+    var prefix=el.getAttribute('data-prefix')||'';
+    var suffix=el.getAttribute('data-suffix')||'';
+    if(reduce){ el.textContent=prefix+target+suffix; return; }
+    var dur=1200, start=null;
+    function tick(ts){
+      if(!start) start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var eased=1-Math.pow(1-p,3);
+      var val=Math.round(target*eased);
+      el.textContent=prefix+val+suffix;
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          if(e.target.classList.contains('sec-head')){}
+          if(e.target.hasAttribute('data-count')){ animateCount(e.target); }
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.16,rootMargin:'0px 0px -40px 0px'});
+    root.querySelectorAll('.reveal,.sec-head,[data-count]').forEach(function(el){ io.observe(el); });
+  } else {
+    root.querySelectorAll('.reveal,.sec-head').forEach(function(el){ el.classList.add('in'); });
+    root.querySelectorAll('[data-count]').forEach(animateCount);
+  }
+})();
+
+function shragaSubmit(form){
+  if(form._honey && form._honey.value){return false;}
+  try{ fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}); }catch(e){}
+  document.getElementById('shragaForm').style.display='none';
+  var s=document.getElementById('shragaSuccess'); s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'center'});
+  return false;
+}
+</script>
+</div>
